@@ -1,0 +1,736 @@
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    padding: 20px;
+    max-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    animation: fadeIn 0.8s ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.auth-container .hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.auth-container .hero-image img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 25px;
+}
+
+.auth-container .registration-form {
+    flex: 1;
+    max-height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.auth-container .logo-container img {
+    max-width: 100px;
+    height: auto;
+    cursor: pointer;
+    animation: bounceIn 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.auth-container .logo-container img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.auth-container .registration-form h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.auth-container form {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 10%;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.auth-container .form-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.auth-container .form-row:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.auth-container .form-row:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.auth-container .form-row:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.auth-container .form-row:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.auth-container .form-row>* {
+    flex: 1;
+}
+
+.auth-container .label-cont {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.auth-container input,
+.auth-container select {
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    direction: rtl;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.auth-container input:hover,
+.auth-container select:hover {
+    border-color: var(--primary-color-hover);
+    box-shadow: 0 0 10px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+.auth-container .RememberMe {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    animation: fadeIn 0.6s ease-out 1s both;
+}
+
+.auth-container .RememberMe input {
+    width: fit-content;
+    margin: 0;
+    text-align: center;
+    align-content: center;
+    transition: transform 0.2s ease;
+}
+
+.auth-container .RememberMe input:hover {
+    transform: scale(1.2);
+}
+
+.auth-container input:focus,
+.auth-container select:focus {
+    outline: none;
+    border-color: var(--border-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+    transform: translateY(-3px);
+}
+
+.auth-container .select-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container .select-container label {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.auth-container .select-container:hover label {
+    color: var(--primary-color-hover);
+}
+
+.auth-container .gender-selection {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container .seprater {
+    margin: 25px 0;
+    width: 100%;
+    position: relative;
+    padding: 0 10%;
+    text-align: center;
+    animation: fadeIn 0.6s ease-out 1.2s both;
+}
+
+.auth-container .seprater::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    background-color: var(--bg-dark);
+    width: 25%;
+    top: 50%;
+    transform: translateX(100%);
+    right: 90%;
+    animation: expandLine 0.8s ease-out 1.5s both;
+}
+
+.auth-container .seprater::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    background-color: var(--bg-dark);
+    width: 25%;
+    top: 50%;
+    right: 10%;
+    animation: expandLine 0.8s ease-out 1.5s both;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 25%;
+    }
+}
+
+.auth-container .gender-selection label {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.auth-container .gender-selection:hover label {
+    color: var(--primary-color-hover);
+}
+
+.auth-container .radio-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    justify-content: space-around;
+}
+
+.auth-container .radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-container .radio-options label:hover {
+    color: var(--primary-color-hover);
+    transform: translateY(-2px);
+}
+
+.auth-container .date-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container .date-input label {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.auth-container .date-input:hover label {
+    color: var(--primary-color-hover);
+}
+
+.auth-container .submit-button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--shadow-color);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px var(--shadow-color);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 var(--shadow-color);
+    }
+}
+
+.auth-container .submit-button:hover {
+    background-color: var(--primary-color-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.auth-container .submit-button .outlook-button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.auth-container .submit-button:disabled {
+    background-color: var(--disabled-bg);
+    cursor: not-allowed;
+    animation: none;
+}
+
+.auth-container .Error {
+    color: var(--danger-color);
+    margin: 0.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-container .hero-image {
+        display: none;
+    }
+
+    .auth-container .registration-form {
+        padding: 1.5rem;
+        width: -webkit-fill-available;
+    }
+
+    .auth-container .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+
+
+    .auth-container .seprater span {
+        margin-top: -1rem;
+    }
+
+    .auth-container .seprater::after,
+    .auth-container .seprater::before {
+        width: 20% !important;
+    }
+
+    .auth-container .seprater::after {
+        right: 90%;
+        top: 63%;
+    }
+
+    .auth-container .seprater::before {
+        right: 10%;
+        top: 62%;
+    }
+
+    .create-account {
+        width: 60%;
+    }
+}
+
+@media (max-width: 426px) {
+    .Login-option>* {
+        width: 100% !important;
+        font-size: 0.9rem !important;
+        padding: 0 !important;
+        height: 50px !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .Login-option {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .auth-container .forget-password-button {
+        width: 100% !important;
+        padding: 0.5rem !important;
+    }
+
+    .auth-container .forget-password-input {
+        width: 100% !important;
+        padding: 1rem 0.5rem !important;
+        margin-bottom: 1rem !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Password visibility toggle */
+.auth-container .password-input-container {
+    position: relative;
+}
+
+.auth-container .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.auth-container .password-toggle:hover {
+    color: var(--primary-color-hover);
+    transform: translateY(-50%) scale(1.2);
+}
+
+.auth-container .Login-option {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 10%;
+    max-width: 600px;
+    animation: fadeInUp 0.6s ease-out 1.5s both;
+}
+
+.auth-container .create-account {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.auth-container .create-account:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(----shadow-color);
+}
+
+.auth-container .outlook-button {
+    width: 40%;
+    border: none;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    border-radius: 25px;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-container .outlook-button:hover {
+    background: var(--primary-color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.auth-container .forget-password-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.auth-container .forget-password-card {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: slideInUp 0.8s ease-out;
+    transition: box-shadow 0.3s ease;
+}
+
+.auth-container .forget-password-card:hover {
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.auth-container .forget-password-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    object-fit: contain;
+    animation: bounceIn 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.auth-container .forget-password-logo:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.auth-container .forget-password-title {
+    color: var(--text-color);
+    font-size: 24px;
+    margin: -59px 0px 20px;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.auth-container .forget-password-input {
+    width: 80%;
+    padding: 11px 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: right;
+    direction: rtl;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.auth-container .forget-password-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+.auth-container .forget-password-input:hover {
+    border-color: var(--primary-color-hover);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.auth-container .forget-password-button {
+    width: 50%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out 0.7s both;
+}
+
+.auth-container .forget-password-button:hover {
+    background-color: var(--primary-color-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.auth-container .forget-password-remember {
+    color: var(--text-color);
+    font-size: 14px;
+    animation: fadeIn 0.6s ease-out 0.9s both;
+}
+
+.auth-container .forget-password-link {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.auth-container .forget-password-link:hover {
+    color: var(--primary-color-hover);
+    transform: scale(1.05);
+}
+
+.auth-container .OTP-Group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.auth-container .OTP-Group input {
+    width: 20%;
+    box-shadow: 0 0 8px 2px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.auth-container .OTP-Group input:focus {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 3px var(--shadow-color);
+}
+
+.auth-container .OTP-Group input:hover {
+    transform: translateY(-2px);
+}
+
+/* Additional smooth animations for better UX */
+.auth-container * {
+    transition: all 0.3s ease;
+}
+
+/* Floating animation for interactive elements */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.auth-container .logo-container img {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Glow effect for focused elements */
+.auth-container input:focus,
+.auth-container select:focus,
+.auth-container .forget-password-input:focus {
+    position: relative;
+}
+
+.auth-container input:focus::after,
+.auth-container select:focus::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    background: var(--primary-color);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.3;
+}

@@ -1,0 +1,23 @@
+.card {
+    position: relative;
+    background: var(--bg-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    max-width: fit-content;
+}
+
+
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
+    background: var(--primary-color);
+    border-top-right-radius: 85%;
+    border-bottom-left-radius: 85%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    z-index: -1;
+}

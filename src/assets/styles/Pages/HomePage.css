@@ -1,0 +1,51 @@
+/* HomePage.css */
+.home-container {
+    max-width: 1024;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.home-title {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+
+
+.auth-message {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.login-button,
+.logout-button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button {
+    background-color: var(--success-color);
+    /* Green */
+    color: white;
+}
+
+.login-button:hover {
+    background-color: var(--success-color);
+}
+
+.logout-button {
+    background-color: var(--danger-color);
+    /* Red */
+    color: var(--text-light);
+}
+
+.logout-button:hover {
+    background-color: var(--danger-color);
+}

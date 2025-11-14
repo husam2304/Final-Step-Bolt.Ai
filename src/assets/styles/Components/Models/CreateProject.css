@@ -1,0 +1,502 @@
+.create-project-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-color--overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.create-project-container .form-container {
+    background: var(--bg-light);
+    margin: auto;
+    max-height: 85%;
+    border-radius: 24px;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    animation: formAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid var(--border-color);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* 🌟 Scrollbar styling (Webkit browsers) */
+.create-project-container .form-container::-webkit-scrollbar {
+    width: 8px;
+    /* عرض بسيط */
+}
+
+.create-project-container .form-container::-webkit-scrollbar-track {
+    background: transparent;
+    /* الخلفية شفافة */
+    border-radius: 8px;
+}
+
+.create-project-container .form-container::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    /* نفس لون البوردر */
+    border-radius: 8px;
+}
+
+.create-project-container .form-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--success-color);
+    /* لمسة عند الهوفر */
+}
+
+/* 🌟 للفايرفوكس */
+.create-project-container .form-container {
+    scrollbar-width: thin;
+    /* رفيع */
+    scrollbar-color: var(--border-color) transparent;
+}
+
+@keyframes formAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes gradientShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.create-project-container .close-btn {
+    position: absolute !important;
+    top: 16px;
+    left: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fee2e2;
+    border: 2px solid #fecaca;
+    color: var(--danger-color) ;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: bold;
+}
+
+.create-project-container .close-btn:hover {
+    background:var(--danger-color);
+    color: var(--bg-color);
+    transform: rotate(90deg) scale(1.1);
+    border-color: var(--danger-color);
+}
+
+.create-project-container .form-group {
+    margin-bottom: 10px;
+    animation: slideInRight 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.create-project-container .form-group:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.create-project-container .form-group:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.create-project-container .form-group:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.create-project-container .form-group:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.create-project-container .form-group:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.create-project-container .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    padding-right: 8px;
+}
+
+.create-project-container .form-group label::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 16px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.create-project-container .form-group:hover label::before {
+    height: 20px;
+    background: var(--primary-color-hover);
+}
+
+.create-project-container .input-wrapper {
+    position: relative;
+}
+
+.create-project-container input[type="text"],
+.create-project-container input[type="number"],
+.create-project-container textarea,
+.create-project-container select
+ {
+    width: 100%;
+    padding: 8px 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-color);
+    outline: none;
+    font-family: inherit;
+}
+
+.create-project-container input[type="text"]:focus,
+.create-project-container input[type="number"]:focus,
+.create-project-container textarea:focus,
+.create-project-container select:focus
+{
+    border-color: var(--primary-color-hover);
+    background: var(--bg-color);
+    box-shadow:
+        0 0 0 3px var(--shadow-color),
+        0 4px 12px var(--shadow-color);
+    transform: translateY(-1px);
+}
+
+.create-project-container textarea {
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.create-project-container .textarea-decoration {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 20px;
+    opacity: 0.3;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.create-project-container textarea:focus+.textarea-decoration {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+.create-project-container .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.create-project-container .row .form-group {
+    margin-bottom: 10px;
+}
+
+.create-project-container .date-wrapper {
+    position: relative;
+}
+
+.create-project-container .date-wrapper:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.create-project-container input[type="number"] {
+    padding-right: 50px;
+}
+
+.create-project-container .submit-btn {
+    width: 80%;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 16px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+    font-family: inherit;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.create-project-container .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.create-project-container .submit-btn:hover::before {
+    left: 100%;
+}
+
+.create-project-container .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px var(--shadow-color);
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.create-project-container .submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Custom select styling */
+.create-project-container select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: left 16px center;
+    background-size: 16px;
+    padding-left: 50px;
+}
+
+/* Loading state */
+.create-project-container .loading {
+    position: relative;
+    color: transparent;
+}
+
+.create-project-container .loading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-top: 2px solid var(--bg-light);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Success state */
+.create-project-container .success {
+    background: var(--success-color) !important;
+    transform: scale(1.02);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+    .create-project-container .form-container {
+        margin: 10px;
+        padding: 30px 25px;
+    }
+
+    .create-project-container .row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .create-project-container .close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+/* Input validation states */
+.create-project-container .invalid {
+    border-color: var(--danger-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.create-project-container .valid {
+    border-color: var(--success-color) !important;
+    background-color: var(--bg-color)!important;
+}
+
+/* Micro animations */
+.create-project-container .form-group:hover {
+    transform: translateX(2px);
+    transition: transform 0.2s ease;
+}
+
+/* Floating label effect */
+.create-project-container .floating-label {
+    position: relative;
+}
+
+.create-project-container .floating-label input:focus+label,
+.create-project-container .floating-label input:not(:placeholder-shown)+label {
+    transform: translateY(-8px) scale(0.85);
+    color: var(--primary-color);
+}
+
+/* Custom scrollbar for textareas */
+.create-project-container textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+.create-project-container textarea::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-radius: 3px;
+}
+
+.create-project-container textarea::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Character counter */
+.create-project-container .char-counter {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 12px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.create-project-container input[type="number"] {
+    cursor: pointer;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: left 16px center;
+    background-size: 16px;
+    padding-left: 50px;
+}
+
+
+.create-project-container .select-input {
+    width: 100%;
+    /* min-height: 53px; */
+    padding: 10px 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--bg-color);
+    /* outline: none; */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    resize: none;
+    appearance: none;
+    /* overflow-y: auto; */
+    height: 40px;
+margin-top: -4px;
+color: var(--text-color);
+}
+/* Focus */
+.create-project-container .select-input:focus {
+    border-color: var(--primary-color-hover);
+    background: var(--bg-color);
+    box-shadow:
+        0 0 0 3px var(--shadow-color),
+        0 4px 12px var(--shadow-color);
+    transform: translateY(-1px);
+    color: var(--text-color);
+}
+
+/* Options inside */
+.create-project-container .select-input option {
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 2px 4px;
+    background: var(--bg-color);
+}
+
+.create-project-container .select-input option:hover {
+    background: var(--primary-color-hover);
+    color: var(--text-color);
+}
+
+/* Scrollbar for multiple */
+.create-project-container .select-input::-webkit-scrollbar {
+    width: 6px;
+}
+
+.create-project-container .select-input::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+
+}
+
+.create-project-container .select-input::-webkit-scrollbar-track {
+    background: var(--bg-color);
+
+}
+
+/* Validation */
+.create-project-container .select-input.invalid {
+    border-color: var(--danger-color) !important;
+}
+
+.create-project-container .select-input.valid {
+    border-color: var(--success-color) !important;
+}
